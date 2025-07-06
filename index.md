@@ -7,13 +7,12 @@ profile:
 published: true
 ---
 
-My name is Lahiru De Silva, and I am a Senior Software Engineer at WSO2 with a strong passion for distributed systems, cloud native technologies and networking.
+My name is Lahiru De Silva, and I am a Senior Software Engineer at WSO2 with a strong passion for distributed systems, API management and networking.
 
-If you want to use this space to write your biography here, edit the `index.md` file. You can put a picture in, too. Rename your picture to `profile.png` and put it in the `assets/images/` folder.
+At WSO2, I collaborate closely with cross-functional teams to design, build, and deploy scalable, cloud-native systems. My work involves leveraging a wide range of cutting-edge CNCF technologies including Kubernetes, Envoy Proxy, Cilium, NGINX, OpenTelemetry, KEDA, and WebAssembly (WASM). I have deep expertise in Envoy Proxy, particularly in the areas of xDS control plane, custom filter development for extensibility, and optimizing data plane performance for high-throughput environments.
 
-The social-icons footer can be used to link profiles from GitHub, OrcID and ReasearchGate aprart form the usual Twitter, LinkedIn and Facebook. You can add your user ID in the `_config.yml` file to link your accounts.
+Before my role at WSO2, I completed Google Summer of Code 2021 with 3scale API management by Red Hat, Inc. where I implemented a caching layer for their Envoy proxy based API gateway. I am a Certified Kubernetes Administrator (CKA) and a Certified Kubernetes Application Developer (CKAD) with over four years of hands-on experience in Kubernetes and related cloud-native technologies, specifically around Kubernetes networking.
 
-PS: If you liked the theme, do star it on GitHub!
 
 ### Also, check out:
 
