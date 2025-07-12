@@ -12,7 +12,7 @@ pre.highlight {
 }
 
 code {
-  font-family: "Bitstream Vera Sans Mono", "Courier", monospace;
+  font-family: $base-font-family;
   color: #c9d1d9;
   background-color: #263238;
   border-radius: 1px;

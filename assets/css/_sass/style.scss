@@ -22,7 +22,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: $base-font-family;
   font-weight: bold;
   line-height: 1.8;
   margin: 0;
@@ -93,7 +93,7 @@ code {
 blockquote {
   border-left: 2px solid $brand-color;
   padding-left: 1em;
-  font-family: Georgia, Times, Times New Roman, serif;
+  font-family: $base-font-family;
   font-size: 0.9 * $base-font-size;
   font-style: italic;
 }
