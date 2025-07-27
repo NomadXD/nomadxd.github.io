@@ -1,6 +1,6 @@
 ---
 title: "Deep dive into Kubernetes custom controllers"
-description: "This post is an example of how to add a cover/hero image"
+description: "Take a deep dive into Kubernetes custom controllers and operators. Understand how to automate cluster operations, extend Kubernetes functionality, and build robust custom resources for your workloads."
 publishDate: "14 Septemeber 2023"
 updatedDate: "14 Septemeber 2023"
 tags: ["k8s"]

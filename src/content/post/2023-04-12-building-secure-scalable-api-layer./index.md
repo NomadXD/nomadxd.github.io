@@ -1,6 +1,6 @@
 ---
 title: "Building a Secure and Scalable API layer using Envoy Proxy"
-description: "This post is an example of how to add a cover/hero image"
+description: "Explore strategies and best practices for building a secure and scalable API layer. Learn about API architecture, security measures, and techniques to ensure your APIs are robust, efficient, and ready for growth."
 publishDate: "12 April 2023"
 updatedDate: "12 April 2023"
 tags: ["envoy"]

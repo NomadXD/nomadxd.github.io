@@ -1,6 +1,6 @@
 ---
 title: "Multi cluster networking with Cilium Cluster Mesh"
-description: "This post is an example of how to add a cover/hero image"
+description: "Discover how to set up and manage multi-cluster networking in Kubernetes using Cilium Cluster Mesh. This article covers architecture, configuration, and best practices for achieving seamless connectivity across clusters."
 publishDate: "17 May 2024"
 updatedDate: "17 May 2024"
 tags: ["k8s", "cilium"]

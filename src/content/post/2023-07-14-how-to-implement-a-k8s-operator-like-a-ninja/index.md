@@ -1,6 +1,6 @@
 ---
 title: "How to implement a K8s operator like a Ninja"
-description: "This post is an example of how to add a cover/hero image"
+description: "Learn how to implement a Kubernetes operator like a pro. This guide covers operator patterns, automation techniques, and best practices for managing complex Kubernetes workloads efficiently."
 publishDate: "14 July 2023"
 updatedDate: "14 July 2023"
 tags: ["k8s"]
@@ -74,11 +74,14 @@ import (
 
 // PodRunnerSpec defines the desired state of PodRunner
 type PodRunnerSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	// PodName is the name of the pod.
+	PodName string `json:"podName,omitempty"`
 
-	// Foo is an example field of PodRunner. Edit podrunner_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// ImageName is the name of the image used to run the pod.
+	ImageName string `json:"imageName,omitempty"`
+
+        // Namespace where the pod is scheduled to run.
+	Namespace string `json:"namespace,omitempty"`
 }
 
 // PodRunnerStatus defines the observed state of PodRunner
@@ -167,10 +170,58 @@ type PodRunnerReconciler struct {
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.13.0/pkg/reconcile
 func (r *PodRunnerReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
-	_ = log.FromContext(ctx)
+	logger := log.FromContext(ctx)
 
-	// TODO(user): your logic here
+	podRunner := &podrunnerv1alpha1.PodRunner{}
+	err := r.Get(ctx, req.NamespacedName, podRunner)
+	if err != nil {
+		// Error reading the PodRunner instance, requeue the request
+		logger.Error(err, "Failed to get PodRunner")
+		return ctrl.Result{}, client.IgnoreNotFound(err)
+	}
 
+	// Create a Pod based on the PodRunner specification
+	podRunnerPod := &corev1.Pod{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      podRunner.Spec.PodName,
+			Namespace: podRunner.Spec.Namespace,
+		},
+		Spec: corev1.PodSpec{
+			Containers: []corev1.Container{
+				{
+					Name:            podRunner.Spec.PodName,
+					Image:           podRunner.Spec.ImageName,
+					ImagePullPolicy: corev1.PullAlways,
+				},
+			},
+		},
+	}
+
+	err = ctrl.SetControllerReference(podRunner, podRunnerPod, r.Scheme)
+	if err != nil {
+		logger.Error(err, "Failed to set controller reference for Nginx Pod")
+		return ctrl.Result{}, err
+	}
+
+	// Check if the Pod already exists
+	foundPod := &corev1.Pod{}
+	err = r.Get(ctx, types.NamespacedName{Name: podRunner.Spec.PodName, Namespace: podRunner.Spec.Namespace}, foundPod)
+	if err != nil && errors.IsNotFound(err) {
+		// Create the Pod
+		err = r.Create(ctx, podRunnerPod)
+		if err != nil {
+			logger.Error(err, "Failed to create Pod")
+			return ctrl.Result{}, err
+		}
+		logger.Info("Pod created")
+		return ctrl.Result{}, nil
+	} else if err != nil {
+		logger.Error(err, "Failed to get Pod")
+		return ctrl.Result{}, err
+	}
+
+	// Pod already exists, do nothing
+	logger.Info("Pod already exists")
 	return ctrl.Result{}, nil
 }
 

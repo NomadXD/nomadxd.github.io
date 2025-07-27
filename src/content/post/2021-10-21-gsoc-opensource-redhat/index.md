@@ -1,6 +1,6 @@
 ---
 title: "Our journey to open source during Google Summer of Code"
-description: "This post is an example of how to add a cover/hero image"
+description: "Explore a personal journey through Google Summer of Code with Red Hat. Learn about open source contributions, project experiences, and insights gained during this unique opportunity."
 publishDate: "23 October 2021"
 updatedDate: "23 October 2021"
 tags: ["envoy"]

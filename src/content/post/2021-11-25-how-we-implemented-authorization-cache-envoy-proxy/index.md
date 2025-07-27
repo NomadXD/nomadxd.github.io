@@ -1,6 +1,6 @@
 ---
 title: "How we implemented an authorization cache for Envoy proxy"
-description: "This post is an example of how to add a cover/hero image"
+description: "Learn how we implemented an efficient authorization cache for Envoy proxy using Proxy-Wasm, integrating with 3scale API Management to reduce latency and improve performance. This article covers the technical implementation, cache design, and benchmarking results."
 publishDate: "25 November 2021"
 updatedDate: "25 November 2021"
 tags: ["envoy"]

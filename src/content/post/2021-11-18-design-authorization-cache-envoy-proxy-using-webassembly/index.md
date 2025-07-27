@@ -1,6 +1,6 @@
 ---
 title: "Design an authorization cache for Envoy proxy using WebAssembly"
-description: "This post is an example of how to add a cover/hero image"
+description: "Discover the design principles behind building an authorization cache for Envoy proxy using Proxy-Wasm and WebAssembly, with integration to 3scale API Management. This article explains the architecture, design decisions, and benefits for API performance and scalability."
 publishDate: "18 November 2021"
 updatedDate: "18 November 2021"
 tags: ["envoy"]

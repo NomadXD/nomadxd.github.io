@@ -1,6 +1,6 @@
 ---
 title: "How I passed my CKA exam on the first attempt"
-description: "This post is an example of how to add a cover/hero image"
+description: "Read a personal story about preparing for and passing the Certified Kubernetes Administrator (CKA) exam. Get tips, insights, and lessons learned to help you succeed in your own Kubernetes certification journey."
 publishDate: "13 July 2023"
 updatedDate: "13 July 2023"
 tags: ["k8s"]

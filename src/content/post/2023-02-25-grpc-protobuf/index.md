@@ -1,6 +1,6 @@
 ---
 title: "A Beginner's Guide to gRPC and protobuf"
-description: "This post is an example of how to add a cover/hero image"
+description: "Learn the fundamentals of gRPC and Protocol Buffers for modern API design. This article explains serialization, efficient communication, and how to build robust APIs using gRPC and Protobuf."
 publishDate: "25 February 2023"
 updatedDate: "25 February 2023"
 tags: ["networking"]
