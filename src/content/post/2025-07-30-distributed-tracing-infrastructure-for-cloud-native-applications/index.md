@@ -14,7 +14,7 @@ The foundation of a distributed tracing system consists of four essential compon
 
 ### 1. Instrumentation
 
-This is the process of integrating code into applications to generate and emit trace data. This data usually takes the form of "spans," which represent individual units of work (e.g., an HTTP request or a database call). Each span includes a unique Span ID, the Trace ID of the overall request it belongs to, start and end timestamps, and other contextual metadata (tags or attributes).
+This is the process of integrating code into applications to generate and emit trace data. This data usually takes the form of "spans" which represent individual units of work (e.g., an HTTP request or a database call). Each span includes a unique Span ID, the Trace ID of the overall request it belongs to, start and end timestamps, and other contextual metadata (tags or attributes).
 
 [Context propagation](https://opentelemetry.io/docs/concepts/context-propagation/) ensures that the Trace ID and parent Span ID are passed along as requests flow between services, allowing the reconstruction of the entire trace. [OpenTelemetry SDKs](https://opentelemetry.io/docs/languages/) are the current industry standard for application instrumentation.
 
@@ -97,7 +97,7 @@ Several distinct visualization paradigms have become standard for presenting tra
 >
 > - Access to a Kubernetes cluster
 > - Helm CLI
-> - Add the OpenSearch Helm charts repository:
+> - OpenSearch Helm charts repository:
 >
 >   ```sh
 >   helm repo add opensearch https://opensearch-project.github.io/helm-charts
@@ -108,7 +108,7 @@ Several distinct visualization paradigms have become standard for presenting tra
 
 This section provides a practical guide for building an end to end distributed tracing system using Opensearch stack. This include Opensearch DataPrepper as the trace collector, Opensearch as the trace sink and Opensearch Trace Analytics plugin with Opensearch Dashboards for trace visualization.
 
-### Deploy Opensearch single node
+### Deploy Opensearch Single Node
 
 For ease of use, demonstration purposes, and because there is no tracing-specific dependency with the OpenSearch deployment, we are using a single node deployment. This is not recommended for production use cases.
 
