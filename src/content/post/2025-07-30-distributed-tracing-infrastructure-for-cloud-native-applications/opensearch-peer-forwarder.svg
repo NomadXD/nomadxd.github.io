@@ -118,7 +118,7 @@
   <path d="M 580 270 L 350 380" stroke="#ff9800" stroke-width="1" fill="none" stroke-dasharray="3,3"/>
   
   <!-- Data flow to OpenSearch -->
-  <path d="M 340 300 L 350 450" class="data-flow"/>
+  <path d="M 340 300 L 400 450" class="data-flow"/>
   <path d="M 510 400 L 450 450" class="data-flow"/>
   <path d="M 290 400 L 350 450" class="data-flow"/>
   
